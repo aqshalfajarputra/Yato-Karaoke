@@ -15,7 +15,6 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -27,6 +26,13 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     Spinner spTrack,spSong;
     Button bOk;
     int nAdd;
+    String[][] arSong = {{"Choose The Title"},{"Brave Shine","Anata ni Deawanakereba",
+            "Insane Dream"},{"Clock Strikes","The Beginning", "Heartache"},
+            {"Again","Feel My Soul","Tokyo"},{"Watashi Igai Watashi ja Nai no",
+            "Romance ga Ariamaru","Killer Ball"},{"Zen Zen Zense",
+            "Iin Desu ka","Sparkle"}};
+    ArrayList<String> listSong = new ArrayList<>();
+    ArrayAdapter<String> adapter;
 
 
 
@@ -45,8 +51,8 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         bOk = (Button) findViewById(R.id.buttonOK);
 
         cbW.setOnCheckedChangeListener(this);
-        cbW.setOnCheckedChangeListener(this);
-        cbW.setOnCheckedChangeListener(this);
+        cbF.setOnCheckedChangeListener(this);
+        cbA.setOnCheckedChangeListener(this);
 
 
         tvHasil1 = (TextView) findViewById(R.id.textViewHasil1);
@@ -54,7 +60,26 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         tvHasil3 = (TextView) findViewById(R.id.textViewHasil3);
         tvHasil4 = (TextView) findViewById(R.id.textViewHasil4);
         tvHasil5 = (TextView) findViewById(R.id.textViewHasil5);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, listSong);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spSong.setAdapter(adapter);
 
+        spTrack.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView,View v, int pos, long id)
+            {
+                listSong.clear();
+                listSong.addAll(Arrays.asList(arSong[pos]));
+                adapter.notifyDataSetChanged();
+                spSong.setSelection(0);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
+            }
+        });
 
 
         findViewById(R.id.buttonOK).setOnClickListener(new View.OnClickListener()
@@ -95,18 +120,19 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             tvHasil3.setText("Your Packet : " + hasil3);
         }
 
-        if (cbW.isChecked()) hasil2+=cbW.getText()+",";
-        if (cbF.isChecked()) hasil2+=cbF.getText()+",";
+        if (cbW.isChecked()) hasil2+=cbW.getText()+" , ";
+        if (cbF.isChecked()) hasil2+=cbF.getText()+" , ";
         if (cbA.isChecked()) hasil2+=cbA.getText()+".";
 
         if (hasil2.length()==startlen) hasil2+=" No Add On";
         tvHasil4.setText(hasil2);
-        tvHasil2.setText("Track List Choose :" + "Artist, " + spTrack.getSelectedItem().toString() + "Title, "
+        tvHasil2.setText("Track List Choose : " + spTrack.getSelectedItem().toString() + " - "
                 + spSong.getSelectedItem().toString());
     }
 
+
     @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
         if (isChecked) nAdd+=1;
         else nAdd-=1;
 

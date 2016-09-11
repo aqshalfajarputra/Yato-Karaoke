@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="track">
+        <item>Choose The Artist</item>
         <item>Aimer</item>
         <item>One Ok Rock</item>
         <item>YUI</item>
