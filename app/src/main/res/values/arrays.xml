@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="track">
+        <item>Aimer</item>
+        <item>One Ok Rock</item>
+        <item>YUI</item>
+        <item>Gesu no Kiwami Otome</item>
+        <item>Radwimps</item>
+    </string-array>
+</resources>
