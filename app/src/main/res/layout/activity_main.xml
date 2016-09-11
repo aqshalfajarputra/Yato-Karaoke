@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/scrollView"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,158 +19,158 @@
 
 
     <TextView
+        android:id="@+id/textViewYoukoso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textStyle="bold|italic"
-        android:text="Youkoso Yakou Karaoke, de arimasu!"
-        android:id="@+id/textViewYoukoso"
-        android:textSize="20sp" />
+        android:text="Youkoso Yato Karaoke, de arimasu!"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="240sp"
-        android:id="@+id/imageView"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/uye" />
 
     <TextView
+        android:id="@+id/textViewDouzo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold|italic"
-        android:text="Douzo, Kono fōmu ni kinyū shite kudasai."
-        android:id="@+id/textViewDouzo"
         android:layout_gravity="center_horizontal"
-        android:textSize="18sp"/>
+        android:text="Douzo, Kono fōmu ni kinyū shite kudasai."
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
     <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <EditText
-            android:hint="Name"
+            android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editTextName"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:hint="Name" />
     </android.support.design.widget.TextInputLayout>
 
     <TextView
+        android:id="@+id/textViewPacket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Packet :"
-        android:id="@+id/textViewPacket" />
+        android:text="Packet :" />
 
     <RadioGroup
+        android:id="@+id/radioGroupStatus"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioGroupStatus">
+        android:layout_height="wrap_content">
 
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gold"
             android:id="@+id/radioButtonGold"
-            android:checked="false" />
-
-        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Silver"
+            android:checked="false"
+            android:text="Gold" />
+
+        <RadioButton
             android:id="@+id/radioButtonSilver"
-            android:checked="false" />
-
-        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bronze"
+            android:checked="false"
+            android:text="Silver" />
+
+        <RadioButton
             android:id="@+id/radioButtonBronze"
-            android:checked="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Bronze" />
     </RadioGroup>
 
     <TextView
+        android:id="@+id/textViewAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add On"
-        android:id="@+id/textViewAdd" />
+        android:text="Add On" />
 
     <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="WiFi Hotspot"
         android:id="@+id/checkBoxW"
-        android:checked="false" />
-
-    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Food and Beverage"
+        android:checked="false"
+        android:text="WiFi Hotspot" />
+
+    <CheckBox
         android:id="@+id/checkBoxF"
-        android:checked="false" />
-
-    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Audio Record"
+        android:checked="false"
+        android:text="Food and Beverage" />
+
+    <CheckBox
         android:id="@+id/checkBoxA"
-        android:checked="false"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Audio Record" />
 
     <TextView
+        android:id="@+id/textViewTrack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Track List :"
-        android:id="@+id/textViewTrack" />
+        android:text="Track List :" />
 
         <Spinner
+            android:id="@+id/spinnerTrack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spinnerTrack"
             android:entries="@array/track"
             />
 
         <Spinner
+            android:id="@+id/spinnerSong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spinnerSong"
             android:layout_gravity="center_horizontal" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bgbtn"
-        android:textColor="@android:color/white"
-        style="@style/Base.TextAppearance.AppCompat.Title"
-        android:text="OK"
         android:id="@+id/buttonOK"
-        android:layout_gravity="right" />
-
-    <TextView
+        style="@style/Base.TextAppearance.AppCompat.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Hasil"
-        android:id="@+id/textViewHasil1" />
+        android:layout_gravity="right"
+        android:background="@drawable/bgbtn"
+        android:text="OK"
+        android:textColor="@android:color/white" />
 
     <TextView
+        android:id="@+id/textViewHasil1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Hasil"
-        android:id="@+id/textViewHasil2" />
+        tools:text="Hasil" />
 
     <TextView
+        android:id="@+id/textViewHasil2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Hasil"
-        android:id="@+id/textViewHasil3" />
+        tools:text="Hasil" />
 
     <TextView
+        android:id="@+id/textViewHasil3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Hasil"
-        android:id="@+id/textViewHasil4" />
+        tools:text="Hasil" />
 
     <TextView
+        android:id="@+id/textViewHasil4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Hasil"
-        android:id="@+id/textViewHasil5" />
+        tools:text="Hasil" />
+
+    <TextView
+        android:id="@+id/textViewHasil5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Hasil" />
 
 </LinearLayout>
     </ScrollView>
