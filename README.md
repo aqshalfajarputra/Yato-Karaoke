@@ -25,6 +25,6 @@ Link Video =  [Video Manual](https://youtu.be/7YN5U6kZJUQ)
 ###LINK APK FILE
 Link APK = [APK FILE] (https://drive.google.com/open?id=0BxHgzoMpq8RcQXdycFpBRVhRalk)
 
-###Aqshal Fajar Putra, XIRPL1, 02, 4667/1386.070, SMK Telkom Malang).
+###Aqshal Fajar Putra, XIRPL1, 02, 4667/1386.070, SMK Telkom Malang.
 
 
